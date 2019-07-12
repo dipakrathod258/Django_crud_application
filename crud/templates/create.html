@@ -1,0 +1,65 @@
+{% include "base/base.html" %}
+{% include "layouts/header.html" %}
+<div class="container">
+	<div class="row" style="padding: 1%;">
+		<div class="col-sm-6">
+			<form action="/store_details/" method="POST">
+				{%  csrf_token %}
+			  <div class="form-group">
+			    <label for="email">First Name&nbsp;<span class="mandatory">*</span>:</label>
+			    <input type="text" class="form-control" name="first_name" id="email" placeholder="Enter your First Name here...">
+			  </div>
+			  <div class="form-group">
+			    <label for="email">Last Name&nbsp;<span class="mandatory">*</span>:</label>
+			    <input type="text" class="form-control" name="last_name" id="email" placeholder="Enter your last name here...">
+			  </div>
+			  <div class="form-group">
+			    <label for="email">Email&nbsp;<span class="mandatory">*</span>:</label>
+			    <input type="email" class="form-control" name="email" id="email" placeholder="Enter your email here...">
+			  </div>
+
+			  <div class="form-group">
+			    <label for="alternate_email">Alternate Email:</label>
+			    <input type="email" class="form-control" name="alternate_email" id="alternate_email" placeholder="Enter your alternate email here...">
+			  </div>
+
+			  <div class="form-group">
+			    <label for="mobile">Mobile&nbsp;<span class="mandatory">*</span>:</label>
+			    <input type="number" class="form-control" name="mobile" id="mobile" placeholder="Enter your mobile here...">
+			  </div>
+
+			  <div class="form-group">
+			    <label for="alternate_mobile">Alterate Mobile:</label>
+			    <input type="number" class="form-control" name="alternate_mobile" id="alternate_mobile" placeholder="Enter your alternate mobile here...">
+			  </div>
+
+			  <div class="form-group">
+			    <label for="Address">Address&nbsp;<span class="mandatory">*</span>:</label>
+			    <textarea class="form-control" name="address" id="address" placeholder="Enter your address here..."></textarea>
+			  </div>
+
+			  <div class="form-group">
+			  	<label>Hobbies&nbsp;<span class="mandatory">*</span>:</label>
+				<label class="checkbox-inline"><input type="checkbox" name="hobbies[]" value="Cricket">Cricket</label>
+				<label class="checkbox-inline"><input type="checkbox" name="hobbies[]" value="Hockey">Hockey</label>
+				<label class="checkbox-inline"><input type="checkbox" name="hobbies[]" value="Football">Football</label>		
+			  </div>
+			  <div class="form-group">
+			  	<label>Gender&nbsp;<span class="mandatory">*</span>:</label>
+				<div class="radio">
+				  <label><input type="radio" name="gender" value="male" checked>Male</label>
+				</div>
+				<div class="radio">
+				  <label><input type="radio" name="gender" value="female">Female</label>
+				</div>
+				<div class="radio">
+				  <label><input type="radio" name="gender" value="others">Others</label>
+				</div>			  	
+			  </div>
+
+			  <button type="submit" class="btn btn-success">Submit</button>
+			</form>
+		</div>
+	</div>
+</div>
+{% include "base/foot.html" %}

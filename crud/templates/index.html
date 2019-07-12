@@ -1,0 +1,45 @@
+{% include "base/base.html" %}
+{% include "layouts/header.html" %}
+<div class="container">
+	<div class="row">
+		<div class="col-sm-6">
+		  <table class="table table-bordered">
+		    <thead>
+		      <tr>
+		        <th>First Name</th>
+		        <th>Last Name</th>
+		        <th>Email</th>
+		        <th>Alternate Email</th>
+		        <th>Mobile</th>
+		        <th>Alternate Mobile</th>
+		        <th>Address</th>
+		        <th>Hobbies</th>
+		        <th>Gender</th>
+		        <th>Action</th>
+		      </tr>
+		    </thead>
+		    <tbody>
+		    {% for student in students %}
+		      <tr>
+		        <td>{{ student.first_name }}</td>
+		        <td>{{ student.last_name }}</td>
+		        <td>{{ student.email }}</td>
+		        <td>{{ student.alternate_email }}</td>
+		        <td>{{ student.mobile }}</td>
+		        <td>{{ student.alternate_mobile }}</td>
+		        <td>{{ student.address }}</td>
+		        <td>{{ student.hobbies }}</td>
+		        <td>{{ student.gender }}</td>
+		        <td>
+		        	<a class="action_btn btn btn-info" href="/edit/{{student.id}}"><i class="fa fa-edit"></i></a>
+		        	<a class="action_btn btn btn-info" href="/destroy/{{student.id}}"><i class="fa fa-trash"></i></a>
+		        </td>
+		      </tr>
+		     {% endfor %}
+		    </tbody>
+		  </table>
+		  <a class="btn btn-primary" role="button" href="/create_student">New Student</a>	
+		</div>
+	</div>
+</div>
+{% include "base/foot.html" %}
