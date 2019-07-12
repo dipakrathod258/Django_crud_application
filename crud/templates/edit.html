@@ -41,11 +41,16 @@
 			  <div class="form-group">
 			  	<label>Hobbies&nbsp;<span class="mandatory">*</span>:</label>
 
-					<label class="checkbox-inline">
-						<input type="checkbox" name="hobbies[]" value="Cricket">Cricket
+			  	{% for hobbie in student.hobbies %}
+			  		{% if hobbie == "Cricket" or hobbie == "Football" or hobbie == "Hockey"  %}
+						<input type="checkbox" name="hobbies[]" value="Cricket" checked="checked">{{hobbie}}
+			  		{% endif %}
+			  	{% endfor %}
+
+<!-- 					<label class="checkbox-inline">
 					</label>
 				<label class="checkbox-inline"><input type="checkbox" name="hobbies[]" value="Hockey">Hockey</label>
-				<label class="checkbox-inline"><input type="checkbox" name="hobbies[]" value="Football">Football</label>		
+				<label class="checkbox-inline"><input type="checkbox" name="hobbies[]" value="Football">Football</label>		 -->
 			  </div>
 			  <div class="form-group">
 			  	<label>Gender&nbsp;<span class="mandatory">*</span>:</label>
